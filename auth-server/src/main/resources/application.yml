@@ -1,0 +1,17 @@
+# basic client registration
+spring:
+  security:
+    oauth2:
+      authorizationserver:
+        client:
+          crm-client:
+            require-authorization-consent: true
+            registration:
+#              client credentials
+              client-id: crm
+              client-secret: "{bcrypt}$2a$10$dbI1tAmX1Pk5/qX1GKuTh.wDS4f39r.8RywQxpkuG4hp0j/NDYNga"
+              authorization-grant-types: client_credentials, authorization_code, refresh_token
+              redirect-uris: http://127.0.0.1:8082/login/oauth2/code/spring
+#              scopes used to gives additional functions to user. OPENID is standard.
+              scopes: user.read, user.write, openid
+              client-authentication-methods: client_secret_basic
