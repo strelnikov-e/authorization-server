@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+
+  pgdb:
+    image: postgres
+    container_name: pgdb
+    hostname: pgdb
+    ports:
+      - "5430:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
