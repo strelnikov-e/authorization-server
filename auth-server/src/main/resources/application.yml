@@ -1,5 +1,11 @@
 server:
   port: 9000
+
+jwt:
+  key:
+    public: classpath:app.pub
+    private: classpath:app.key
+    id: serverkey
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5430/postgres
